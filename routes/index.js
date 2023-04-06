@@ -1,5 +1,6 @@
 import checkUser from "../middlewares/checkUser.js";
 import passport from "passport";
+import { __dirname } from "../app.js";
 import { getReplyToCurrentEmails } from "../controllers/index.js";
 export default (app) => {
   app.get("/", (req, res) =>
@@ -17,6 +18,7 @@ export default (app) => {
       res.redirect("/api/mail/user/reply-current-email");
     }
   );
+  app.get("/script.js", (req, res) => res.sendFile(__dirname + "/script.js"));
   app.get(
     "/api/mail/user/reply-current-email",
     checkUser,
