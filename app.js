@@ -4,6 +4,11 @@ import cookieSession from "cookie-session";
 import express from "express";
 import passport from "passport";
 import routes from "./routes/index.js";
+import path from "path";
+import url from "url";
+
+export const __filename = url.fileURLToPath(import.meta.url);
+export const __dirname = path.dirname(__filename);
 
 import "./utils/passport.js";
 
